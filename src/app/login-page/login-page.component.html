@@ -1,0 +1,143 @@
+<body>
+    <div class="login-root">
+        <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+            <!-- La sezione "loginbackground" contiene la griglia di sfondo
+                 con diverse box-root che creano effetti grafici (gradienti, background color, rotazioni, ecc.) -->
+            <div class="loginbackground box-background--white padding-top--64">
+                <div class="loginbackground-gridContainer">
+                    <!-- Ogni div con uno style="grid-area: x / y / etc." si allinea in una certa area della griglia.
+                         Serve a posizionare gli effetti di background (gradienti, box colorate, etc.) -->
+                    <div class="box-root flex-flex" style="grid-area: top / start / 8 / end;">
+                        <div class="box-root"
+                            style="background-image: linear-gradient(white 0%, rgb(247, 250, 252) 33%); flex-grow: 1;">
+                        </div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 4 / 2 / auto / 5;">
+                        <div class="box-root box-divider--light-all-2 animationLeftRight tans3s" style="flex-grow: 1;">
+                        </div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 6 / start / auto / 2;">
+                        <div class="box-root box-background--blue800 animationRightLeft" style="flex-grow: 1;"></div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 7 / start / auto / 4;">
+                        <div class="box-root box-background--blue animationLeftRight" style="flex-grow: 1;"></div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 8 / 4 / auto / 6;">
+                        <div class="box-root box-background--gray100 animationLeftRight tans3s" style="flex-grow: 1;">
+                        </div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 2 / 15 / auto / end;">
+                        <div class="box-root box-background--cyan200 animationRightLeft tans4s" style="flex-grow: 1;">
+                        </div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 3 / 14 / auto / end;">
+                        <div class="box-root box-background--blue animationRightLeft" style="flex-grow: 1;"></div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 4 / 17 / auto / 20;">
+                        <div class="box-root box-background--gray100 animationRightLeft tans4s" style="flex-grow: 1;">
+                        </div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 5 / 14 / auto / 17;">
+                        <div class="box-root box-divider--light-all-2 animationRightLeft tans3s" style="flex-grow: 1;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Questa parte contiene il logo, il form di login e un footer con i riferimenti -->
+            <div class="box-root flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9; padding-top: 10%;">
+                <!-- Sezione logo -->
+                <div class="box-root padding-top--1 padding-bottom--10 flex-flex flex-justifyContent--center">
+                    <!-- Logo dell’app (crates-logo.png) -->
+                    <img src="assets/img/crates-logo.png" style="width: 150px">
+                </div>
+
+                <!-- Contenitore principale del form -->
+                <div class="formbg-outer">
+                    <div class="formbg">
+                        <div class="formbg-inner padding-horizontal--48">
+                            <span class="padding-bottom--15">Login amministratore</span>
+                            <!-- Il form Angular per l’inserimento di email e password -->
+                            <form (ngSubmit)="onSubmit()">
+                                <div class="field">
+                                    <label for="email">Email</label>
+                                    <!-- Utilizziamo il two-way data binding [(ngModel)] per salvare il valore nell’attributo "email" del componente -->
+                                    <input type="email" id="email" [(ngModel)]="email" name="email" required>
+                                </div>
+                                <div class="field">
+                                    <label for="password">Password</label>
+                                    <!-- Stessa cosa per la password, che va a finire nell’attributo "password" del componente -->
+                                    <input type="password" id="password" [(ngModel)]="password" name="password" required>
+                                </div>
+                                <!-- Bottone per l’invio del form -->
+                                <button type="submit" class="submitBtn">Login</button>
+                                <p class="noAdmin">Non sei un admin?</p>
+                                <!-- [routerLink] ci permette di navigare verso un’altra rotta senza ricaricare la pagina -->
+                                <p [routerLink]="['/visualizza-catalogo-guest']" class="linkCatalogo">Visualizza il
+                                    catalogo</p>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Footer con i crediti -->
+                    <div class="footer-link padding-top--24">
+                        <div class="listing padding-top--24 padding-bottom--10 flex-flex center-center">
+                            <span>© Crates developed by
+                                <a href="https://www.linkedin.com/in/emanuele-squillante/" target="_blank">
+                                    Emanuele Squillante
+                                </a>
+                            </span>
+                        </div>
+                        <div class="listing padding-top--1 padding-bottom--20 flex-flex center-center">
+                            <a href="https://www.linkedin.com/in/emanuele-squillante/" target="_blank">
+                                <img src="assets/img/ES_Logo_png.png" style="width: 150px">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Duplicato della parte iniziale per un ulteriore strato di design
+                 con gli stessi box-root "artistici" e rotazioni negli style. -->
+            <div class="loginbackground box-background--white padding-top--180">
+                <div class="loginbackground-gridContainer">
+                    <div class="box-root flex-flex" style="grid-area: top / start / 8 / end;">
+                        <div class="box-root"
+                            style="background-image: linear-gradient(white 0%, rgb(247, 250, 252) 33%); flex-grow: 1; ">
+                        </div>
+                    </div> 
+                    <div class="box-root flex-flex" style="grid-area: 4 / 2 / auto / 5;">
+                        <div class="box-root box-divider--light-all-2 animationLeftRight tans3s" style="flex-grow: 1;;">
+                        </div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 6 / start / auto / 2;">
+                        <div class="box-root box-background--blue800 animationRightLeft" style="flex-grow: 1;transform: rotate(30deg)"></div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 7 / start / auto / 4;">
+                        <div class="box-root box-background--blue animationLeftRight" style="flex-grow: 1; transform: rotate(30deg)"></div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 8 / 4 / auto / 6;">
+                        <div class="box-root box-background--gray100 animationLeftRight tans3s" style="flex-grow: 1;transform: rotate(30deg)">
+                        </div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 2 / 15 / auto / end;">
+                        <div class="box-root box-background--cyan200 animationRightLeft tans4s" style="flex-grow: 1;transform: rotate(30deg)">
+                        </div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 3 / 14 / auto / end;">
+                        <div class="box-root box-background--blue animationRightLeft" style="flex-grow: 1;"></div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 4 / 17 / auto / 20;">
+                        <div class="box-root box-background--gray100 animationRightLeft tans4s" style="flex-grow: 1;transform: rotate(30deg)">
+                        </div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 5 / 14 / auto / 17;">
+                        <div class="box-root box-divider--light-all-2 animationRightLeft tans3s" style="flex-grow: 1; transform: rotate(30deg)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+w

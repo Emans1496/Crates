@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="topBar">
+    <h1 class="title">Modifica Categoria</h1>
+  </div>
+  <form [formGroup]="categoriaForm" (ngSubmit)="modificaCategoria()">
+    <mat-form-field appearance="fill">
+      <mat-label>Nome Categoria</mat-label>
+      <input matInput formControlName="nomeCategoria" />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Salva</button>
+  </form>
+  <div class="infoBox">
+    <h4>
+      Qui puoi modificare una categoria esistente nel catalogo,
+      compila il form e clicca "Salva" per confermare la modifica
+    </h4>
+  </div>
+</div>

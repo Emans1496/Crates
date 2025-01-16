@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="topBar">
+        <h1 class="title">Benvenuto in Crates</h1>
+    </div>
+    <div class="content">
+        <h3> Il tuo gestionale di magazzino! </h3>
+        <div class="cards">
+            <!-- Ogni mat-card rappresenta una funzione del gestionale (Visualizza, Modifica, Aggiungi, Elimina).
+                 All’interno trovi un mat-card-header con un mat-card-title e un mat-card-footer con i chip
+                 che permettono la navigazione verso i componenti corrispondenti. -->
+            <mat-card class="example-card" appearance="outlined">
+                <mat-card-header>
+                    <mat-card-title>Visualizza</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>Visualizza tutti i prodotti del catalogo e le categorie disponibili nel tuo gestionale</p>
+                </mat-card-content>
+                <mat-card-footer class="example-card-footer">
+                    <mat-chip-set aria-label="Chihuahua traits">
+                        <mat-chip [routerLink]="['/visualizza-catalogo']">Vai al catalogo</mat-chip>
+                        <mat-chip [routerLink]="['/visualizza-categorie']">Vai alle categorie</mat-chip>
+                    </mat-chip-set>
+                </mat-card-footer>
+            </mat-card>
+            
+            <mat-card class="example-card" appearance="outlined">
+                <mat-card-header>
+                    <mat-card-title>Modifica</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>Modifica facilmente i prodotti del catalogo e le categorie disponibili nel tuo gestionale</p>
+                </mat-card-content>
+                <mat-card-footer class="example-card-footer">
+                    <mat-chip-set aria-label="Chihuahua traits">
+                        <mat-chip [routerLink]="['/visualizza-catalogo']">Modifica un prodotto</mat-chip>
+                        <mat-chip [routerLink]="['/visualizza-categorie']">Modifica una categoria</mat-chip>
+                    </mat-chip-set>
+                </mat-card-footer>
+            </mat-card>
+
+            <mat-card class="example-card" appearance="outlined">
+                <mat-card-header>
+                    <mat-card-title>Aggiungi</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>Aggiungi facilmente i prodotti nel catalogo e le categorie nel tuo gestionale</p>
+                </mat-card-content>
+                <mat-card-footer class="example-card-footer">
+                    <mat-chip-set aria-label="Chihuahua traits">
+                        <mat-chip [routerLink]="['/visualizza-catalogo']">Aggiungi un prodotto</mat-chip>
+                        <mat-chip [routerLink]="['/visualizza-categorie']">Aggiungi una categoria</mat-chip>
+                    </mat-chip-set>
+                </mat-card-footer>
+            </mat-card>
+            
+            <mat-card class="example-card" appearance="outlined">
+                <mat-card-header>
+                    <mat-card-title>Elimina</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>Elimina un prodotto in particolare o una categoria nel tuo gestionale dal catalogo</p>
+                </mat-card-content>
+                <mat-card-footer class="example-card-footer">
+                    <mat-chip-set aria-label="Chihuahua traits">
+                        <mat-chip [routerLink]="['/visualizza-catalogo']">Elimina un prodotto</mat-chip>
+                        <mat-chip [routerLink]="['/visualizza-categorie']">Elimina una categoria</mat-chip>
+                    </mat-chip-set>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+    </div>
+    <div class="infoBox">
+        <h4>Benvenuto in Crates!
+            La webapp è composta da 4 sezioni: Visualizza, Modifica, Aggiungi e Elimina. Ogni sezione è rappresentata da un pulsante nella barra di navigazione.</h4>
+            <h5 style="color: red; font-style: italic;">
+              Puoi visualizzare il log delle modifiche effettuate sul catalogo e le categorie 
+              nel file "operazioni_crud.log" nella cartella temporanea del tuo pc
+            </h5>
+    </div>
+</div>

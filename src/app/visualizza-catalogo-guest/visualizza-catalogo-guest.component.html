@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="topBar">
+    <h1 class="title">Visualizza Catalogo</h1>
+  </div>
+  <mat-form-field appearance="outline" class="label">
+    <mat-label>Cerca...</mat-label>
+    <!-- (keyup) -> applyFilter($event) per filtrare i risultati in tempo reale -->
+    <input matInput (keyup)="applyFilter($event)" placeholder="Es. Nome prodotto o ID" #input>
+  </mat-form-field>
+  
+  <!-- mat-table con matSort e dataSource collegato alla logica in TS -->
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+    <!-- Colonna ID -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Colonna Nome -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
+      <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+    </ng-container>
+  
+    <!-- Colonna Descrizione -->
+    <ng-container matColumnDef="descrizione">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Descrizione </th>
+      <td mat-cell *matCellDef="let element"> {{element.descrizione}} </td>
+    </ng-container>
+  
+    <!-- Colonna Prezzo -->
+    <ng-container matColumnDef="prezzo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Prezzo </th>
+      <td mat-cell *matCellDef="let element"> {{element.prezzo}} € </td>
+    </ng-container>
+  
+    <!-- Colonna Categoria -->
+    <ng-container matColumnDef="categoriaId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Categoria ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.categoriaId}} </td>
+    </ng-container>
+    
+    <!-- Riga Header (nomi delle colonne) -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <!-- Riga Dati (valori presi dal dataSource) -->
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+    <!-- Riga mostrata se non ci sono dati dopo il filtraggio -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="5">Nessun dato corrisponde al filtro "{{input.value}}"</td>
+    </tr>
+  </table>
+  
+  <!-- Paginatore con selezione di 5, 10, 25, 100 elementi per pagina -->
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+</div>

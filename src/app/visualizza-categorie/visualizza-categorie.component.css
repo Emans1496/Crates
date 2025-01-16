@@ -1,0 +1,45 @@
+.container {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%;
+}
+
+.title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.minifab{
+    box-shadow: none;
+}
+
+.topBar{
+    width: 120%;     
+    background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea)
+}
+
+table{
+    background-color: #0384f506;
+    margin-top: 3%;
+}
+
+.label{
+    margin: 1% 0px 0px 0px;
+    width: 30%;
+}
+
+.infoBox{
+    margin-top: 5%;
+    background-color:aliceblue;
+    border-radius: 20px;
+    padding: 10px;
+    width: 50%;
+}

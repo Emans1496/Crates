@@ -1,0 +1,49 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+  }
+
+
+  .logoSidebar {
+    width: 70%;
+  }
+
+  .sidebar{
+    width: 13%;
+    background-color : #0086f5;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9f01ea",endColorstr="#56d8e4",GradientType=1);
+    padding: 10px 15px 0px 15px;
+    text-align: center;
+    border-radius: 0px;
+    box-shadow: 4px 0px 30px -12px rgba(0, 0, 0, 0.196);
+    -webkit-box-shadow: 7px 4px 30px -12px rgba(0, 0, 0, 0.196);
+    -moz-box-shadow: 7px 4px 30px -12px rgba(0,0,0,0.196);
+  }
+
+  .menuBtn{
+    margin: 13px;
+    padding: 20px;
+    font-size: 12px;
+    color: white;
+    width: 90%;
+  }
+
+
+
+  .credits{
+    margin-top: 10px;
+  }
+
+  .logoEma {
+    width: 100px;
+  }
+
+
+  /* CONTENUTO */
+  
+  .content{
+    background-color: white;
+    padding: 0px 0px 0px 13%;
+    margin-left: 0px !important;
+    text-align: center;
+  }

@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="topBar">
+    <h1 class="title">Aggiungi prodotto</h1>
+  </div>
+  <form [formGroup]="prodottoForm" class="form">
+    <h2>Compila i campi sottostanti <br> per aggiungere un nuovo prodotto</h2>
+    
+    <mat-form-field>
+      <mat-label>Nome Prodotto</mat-label>
+      <input matInput formControlName="nome">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Descrizione Prodotto</mat-label>
+      <input matInput formControlName="descrizione">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Prezzo Prodotto</mat-label>
+      <input matInput type="number" formControlName="prezzo">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Categoria Id</mat-label>
+      <input matInput type="number" formControlName="categoriaId">
+    </mat-form-field>
+  
+    <div class="buttons">
+      <button mat-raised-button color="primary" (click)="aggiungiProdotto()">Aggiungi Prodotto</button>
+      <button mat-raised-button color="warn" type="reset">Reset</button>
+    </div>
+  </form>
+  <div class="infoBox">
+    <h4>
+      In questa sezione puoi aggiungere un nuovo prodotto al catalogo attuale. 
+      <br>Compila il form e poi clicca sul pulsante "Aggiungi Prodotto" per creare il prodotto.
+    </h4>
+  </div>
+</div>

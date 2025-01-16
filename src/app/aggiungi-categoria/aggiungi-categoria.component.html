@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="topBar">
+    <h1 class="title">Aggiungi Categoria</h1>
+  </div>
+  <form [formGroup]="categoriaForm" class="form">
+    <h2>Compila i campi sottostanti <br> per aggiungere una nuova categoria</h2>
+    <mat-form-field>
+      <mat-label>Nome Categoria</mat-label>
+      <input matInput formControlName="nomeCategoria" placeholder="Es. Elettronica">
+    </mat-form-field>
+
+    <div class="buttons">
+      <!-- Al click, chiama aggiungiCategoria() in TS -->
+      <button mat-raised-button color="primary" (click)="aggiungiCategoria()">Aggiungi Categoria</button>
+      <button mat-raised-button color="warn" type="reset">Reset</button>
+    </div>
+  </form>
+  <div class="infoBox">
+    <h4>
+      In questa sezione puoi aggiungere una nuova categoria. L'ID verrà aggiunto in automatico, usa lo strumento 
+      "Visualizza Categorie" per visualizzare l'ID corrispondente ad una categoria.
+      <br>
+      Compila i campi e clicca il pulsante "Aggiungi Categoria" per confermare l'operazione.
+    </h4>
+  </div>
+</div>

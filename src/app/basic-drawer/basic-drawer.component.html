@@ -1,0 +1,64 @@
+<mat-drawer-container class="container">
+  <!--
+    mat-drawer-container è il contenitore principale dell'interfaccia "drawer".
+    Al suo interno ci sono:
+    - mat-drawer (la sidebar laterale)
+    - mat-drawer-content (il contenuto principale)
+  -->
+
+  <mat-drawer mode="side" opened class="sidebar">
+    <!--
+      mode="side" indica che il drawer è sempre visibile a sinistra (side).
+      opened significa che parte aperto di default.
+    -->
+    <img src="/assets/img/crates-logo.png" alt="Logo" class="logoSidebar">
+
+    <div class="selezioni">
+      <!--
+        Qui abbiamo i pulsanti con [routerLink] per navigare fra le varie pagine
+        dell’app (home, visualizza catalogo, aggiungi prodotto, ecc.).
+        mat-raised-button rende il pulsante “rialzato” (stile Material).
+        extended + mat-icon mostreranno un’icona e la label del pulsante.
+      -->
+      <button mat-raised-button extended class="menuBtn" [routerLink]="['/home']">
+        <mat-icon>home</mat-icon>
+        Home
+      </button>
+      <button mat-raised-button extended class="menuBtn" [routerLink]="['/visualizza-catalogo']">
+        <mat-icon>inventory_2</mat-icon>
+        Visualizza Catalogo
+      </button>
+      <button mat-raised-button extended class="menuBtn" [routerLink]="['/aggiungi-prodotto']">
+        <mat-icon>add_box</mat-icon>
+        Aggiungi Prodotto
+      </button>
+      <button mat-raised-button extended filled-horizontal-padding class="menuBtn" [routerLink]="['/visualizza-categorie']">
+        <mat-icon>category</mat-icon>
+        Visualizza Categorie
+      </button>
+      <button mat-raised-button extended class="menuBtn" [routerLink]="['/aggiungi-categoria']">
+        <mat-icon>add_circle</mat-icon>
+        Aggiungi Categoria
+      </button>
+    </div>
+
+    <div class="credits">
+      <!--
+        Piccola sezione di “credits” dove mostri chi ha realizzato l’app.
+      -->
+      <h6 style="margin: 0px; color:white">Powered by</h6>
+      <a href="https://www.linkedin.com/in/emanuele-squillante/">
+        <img src="/assets/img/ES_Logo_png.png" class="logoEma">
+      </a>
+    </div>
+  </mat-drawer>
+
+  <!--
+    mat-drawer-content: qui dentro si caricheranno i componenti
+    a seconda della rotta (router-outlet).
+  -->
+  <mat-drawer-content class="content">
+    <!-- Qui dentro appare il contenuto di qualunque rotta venga caricata -->
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
